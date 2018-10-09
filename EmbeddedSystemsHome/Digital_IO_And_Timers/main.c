@@ -26,6 +26,7 @@ int main(void){
 	
 	TIM2->PSC = 8399; //Prescaler value - the prescaler clock defaults to twice the APB1 which is running at 42MHz - so the timer clock is 84MHz
 	TIM2->EGR = 1; //Re-initialises the timer
+	TIM2->ARR = 1000; /*sets the value in the autoreload register*/
 	
 	for(;;){
 		GPIOD->BSRR = 1<<12; //Turn on green LED
