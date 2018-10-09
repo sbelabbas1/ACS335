@@ -28,23 +28,13 @@ Project File Date:  10/06/2018
 *** Using Compiler 'V5.06 update 3 (build 300)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'STM32F4Discovery'
 compiling main.c...
-compiling my_defines.c...
-compiling stm32f4xx_hal_cortex.c...
-compiling stm32f4xx_hal.c...
-compiling stm32f4xx_hal_dma.c...
-compiling stm32f4xx_hal_gpio.c...
-compiling stm32f4xx_hal_pwr.c...
-compiling stm32f4xx_hal_dma_ex.c...
-compiling stm32f4xx_hal_pwr_ex.c...
-compiling stm32f4xx_hal_rcc_ex.c...
-compiling stm32f4xx_hal_rcc.c...
-assembling startup_stm32f407xx.s...
+main.c(1): warning:  #14-D: extra text after expected end of preprocessing directive
+  #include "stm32f4xx.h";
+main.c: 1 warning, 0 errors
 compiling system_stm32f4xx.c...
-compiling stm32f4xx_hal_tim_ex.c...
-compiling stm32f4xx_hal_tim.c...
 linking...
-Program Size: Code=436 RO-data=408 RW-data=0 ZI-data=1632  
-".\Objects\Digital_IO_And_Timers.axf" - 0 Error(s), 0 Warning(s).
+Program Size: Code=1100 RO-data=408 RW-data=0 ZI-data=1632  
+".\Objects\Digital_IO_And_Timers.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -56,18 +46,18 @@ Package Vendor: ARM
 
 Package Vendor: Keil
                 http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.13.0.pack
-                ::Device:STM32Cube Framework:1.0.0 (API)
+                Keil::Device:STM32Cube HAL:TIM:1.7.4
                 STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: TIM Version: 1.7.4
    * Component: STM32Cube Framework Version: 1.0.0
    * Component: Startup Version: 2.6.2
+   * Component: Cortex Version: 1.7.4
    * Component: DMA Version: 1.7.4
    * Component: Common Version: 1.7.4
-   * Component: Cortex Version: 1.7.4
    * Component: Classic Version: 1.7.4
    * Component: PWR Version: 1.7.4
-   * Component: RCC Version: 1.7.4
    * Component: GPIO Version: 1.7.4
-   * Component: TIM Version: 1.7.4
+   * Component: RCC Version: 1.7.4
 
 <h2>Collection of Component include folders:</h2>
   C:\Users\steve\Documents\University\2018-2019\ACS335\ACS335\EmbeddedSystemsHome\Digital_IO_And_Timers\RTE
@@ -80,14 +70,21 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:4.3.0
 
+   * Component: Keil::Device:STM32Cube HAL:TIM:1.7.4
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c
+
    * Component: ::Device:STM32Cube Framework:1.0.0 (API)
 
    * Component: Keil::Device:Startup:2.6.2
+      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
       Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   MDK\Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
-      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f407xx.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
+
+   * Component: Keil::Device:STM32Cube HAL:Cortex:1.7.4
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c
 
    * Component: Keil::Device:STM32Cube HAL:DMA:1.7.4
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c
@@ -97,35 +94,28 @@ Package Vendor: Keil
       Include file:  Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c
 
-   * Component: Keil::Device:STM32Cube HAL:Cortex:1.7.4
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c
-
    * Component: Keil::Device:STM32Cube Framework:Classic:1.7.4
-      Include file:  CMSIS\Driver\Config\RTE_Device.h
-      Include file:  MDK\Templates\Inc\stm32f4xx_hal_conf.h
-      Include file:  MDK\Templates_LL\Inc\main.h
-      Source file:   MDK\Templates\Src\stm32f4xx_hal_msp.c
-      Source file:   MDK\Templates\Src\stm32f4xx_it.c
       Source file:   MDK\Templates_LL\Src\main.c
-      Include file:  MDK\Templates\Inc\stm32f4xx_it.h
       Include file:  MDK\Templates\Inc\main.h
       Source file:   MDK\Templates\Src\main.c
+      Include file:  CMSIS\Driver\Config\RTE_Device.h
+      Include file:  MDK\Templates\Inc\stm32f4xx_hal_conf.h
+      Source file:   MDK\Templates\Src\stm32f4xx_hal_msp.c
+      Include file:  MDK\Templates\Inc\stm32f4xx_it.h
+      Source file:   MDK\Templates\Src\stm32f4xx_it.c
+      Include file:  MDK\Templates_LL\Inc\main.h
 
    * Component: Keil::Device:STM32Cube HAL:PWR:1.7.4
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c
-
-   * Component: Keil::Device:STM32Cube HAL:RCC:1.7.4
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
 
    * Component: Keil::Device:STM32Cube HAL:GPIO:1.7.4
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c
 
-   * Component: Keil::Device:STM32Cube HAL:TIM:1.7.4
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c
-Build Time Elapsed:  00:00:28
+   * Component: Keil::Device:STM32Cube HAL:RCC:1.7.4
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>
