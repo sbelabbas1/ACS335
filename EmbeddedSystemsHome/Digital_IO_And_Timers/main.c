@@ -21,7 +21,7 @@ int main(void){
 	//Initialise Timer 2 
 	RCC->APB1ENR |= RCC_APB1ENR_TIM2EN; //Enable timer 2 clock 
 	
-	TIM2->CR1 &= ~0X00000016; //Sets the counter as an upcounter
+	//TIM2->CR1 &= ~0X00000016; //Sets the counter as an upcounter
 	TIM2->CR1 |= 0X00000008; //Turn off repeat - i.e. use one pulse mode
 	
 	TIM2->PSC = 8399; //Prescaler value - the prescaler clock defaults to twice the APB1 which is running at 42MHz - so the timer clock is 84MHz
